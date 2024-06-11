@@ -1,0 +1,95 @@
+@import "../../scss/global";
+
+@mixin flex-center-gap($gap: 0) {
+    display: flex;
+    gap: $gap;
+    align-items: center;
+}
+
+.header {
+    width: 100%;
+    height: 65px;
+    background: $background-nav;
+
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+
+        .image-props {
+            max-width: 100px;
+            height: 40px;
+            border-radius: 4px;
+        }
+
+        &-logo {
+            &-menu {
+                &--left {
+                    @include flex-center-gap(16px);
+
+                    .menu--left-image {
+                        @extend .image-props
+                    }
+
+                    .menu--left-bar {
+                        @include flex-center-gap(16px);
+
+                        span {
+                            color: $dark-text-primary
+                        }
+                    }
+                }
+
+                &--right {
+                    @include flex-center-gap(16px);
+                    margin-left: 16px;
+
+                    .menu--right-image {
+                        @extend .image-props
+                    }
+
+                    .menu--right-items {
+                        @include flex-center-gap(16px);
+
+                        span {
+                            color: $dark-text-primary
+                        }
+                    }
+
+
+                }
+            }
+        }
+
+        &-search {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+
+            .search-filter {
+                width: 100%;
+                height: 40px;
+                border-radius: 10px;
+                background-color: $dark-background-secondary;
+                @include flex-center-gap(16px);
+                margin-left: 16px;
+                padding: 8px 16px;
+                color: $dark-text-primary;
+
+                &__drop-down {
+                    @include flex-center-gap(8px);
+                }
+
+                &__input {
+                    width: 100%;
+                    background: none;
+                    border: none;
+                    color: $dark-text-secondary;
+                    font-size: 14px
+                }
+            }
+        }
+    }
+}

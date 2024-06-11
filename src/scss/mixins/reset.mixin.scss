@@ -1,0 +1,11 @@
+@mixin margin-padding-reset {
+    padding: 0;
+    margin: 0;
+  }
+  
+  @mixin border-box {
+    outline: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
