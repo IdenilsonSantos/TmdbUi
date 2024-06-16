@@ -1,0 +1,105 @@
+@import "../../scss/global.scss";
+
+.featured-videos {
+  height: 800px;
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.589), rgb(0, 0, 0));
+  }
+
+  &__container {
+    position: absolute;
+    width: 100%;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 800px;
+
+    &-info-movies {
+      height: 50%;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      width: 100%;
+
+      .info-movie-title {
+        font-size: 48px;
+        font-weight: 400;
+      }
+
+      .info-movie-description {
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 2;
+      }
+
+      .info-movies-actions {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-top: 16px;
+
+        .button {
+          width: 60px;
+          height: 60px;
+          background-color: #fff;
+          opacity: 0.6;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: 0.2s ease-in-out;
+          cursor: pointer;
+
+          &:hover {
+            transform: scale(1.25);
+          }
+        }
+
+        .see-more-info {
+          padding: 8px;
+          border-radius: 100px;
+          opacity: 0.6;
+          color: $background-color;
+          transition: 0.2s ease-in-out;
+          cursor: pointer;
+          border: none;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    &-trailers {
+      height: 50%;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 16px;
+    }
+  }
+}
+
+.play-area {
+  display: flex;
+  gap: 16px;
+  overflow: hidden;
+}

@@ -13,21 +13,17 @@ const Header = () => {
       <div className="container">
         <nav className="header__nav">
           <div className="header__nav-logo-menu--left">
-            <img
-              className="menu--left-image"
-              src="https://m.media-amazon.com/images/G/01/IMDb/brand/guidelines/imdb/IMDb_BrandBanner_1920x425.jpg"
-            />
+            
             <div className="menu--left-bar">
               <Menu color="#C3C3C3" />
-              <span>Menu</span>
             </div>
+            <img
+              className="menu--left-image"
+              src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg"
+            />
           </div>
           <div className="header__nav-search">
             <div className="search-filter">
-              <div className="search-filter__drop-down">
-                <span>All</span>
-                <ChevronDown size={16} />
-              </div>
               <input
                 className="search-filter__input"
                 placeholder="Search IMdb"
@@ -38,10 +34,6 @@ const Header = () => {
             </div>
           </div>
           <div className="header__nav-logo-menu--right">
-            <img
-              className="menu--right-image"
-              src="https://m.media-amazon.com/images/S/sash/plpk1uWJsI--$Bh.png"
-            />
             <div className="menu--right-items">
               <BookmarkPlus color="#C3C3C3" />
               <span>Lista</span>
