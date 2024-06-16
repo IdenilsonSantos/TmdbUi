@@ -30,8 +30,9 @@ const TabsOptions = ({
   onChange,
   renderTab = defaultTab,
   currentTab,
-}: TabsOptionsProps) => (
-  <div className="tabs">
+}: TabsOptionsProps) => {
+  return (
+     <div className="tabs">
     {options.map((tab) => (
       <div
         key={tab.value}
@@ -42,7 +43,8 @@ const TabsOptions = ({
       </div>
     ))}
   </div>
-);
+  )
+};
 
 const renderTab = (tab: TabOption, currentValue: number) => (
   <button className={`tabs__button ${currentValue === tab.value ? "active" : ""}`}>
@@ -51,7 +53,7 @@ const renderTab = (tab: TabOption, currentValue: number) => (
 );
 
 export const Tabs = ({ options, defaulValue, goTo, children }: TabsProps) => {
-  const [currentTab, setCurrentTab] = useState<TabOption>(defaulValue || { value: 1, label: "Tabs 1" });
+  const [currentTab, setCurrentTab] = useState<TabOption>(defaulValue || options[0]);
   const [indicatorPosition, setIndicatorPosition] = useState(0);
   const [width, setWidth] = useState(0);
 
@@ -63,11 +65,14 @@ export const Tabs = ({ options, defaulValue, goTo, children }: TabsProps) => {
   useEffect(() => {
     const tabs = document.querySelector(".tabs");
     const tab = document.querySelector(`.tabs__item${currentTab.value}`);
+    const tabButton = document.querySelector(`.active`);
 
-    if (tabs && tab) {
+    if (tabs && tab && tabButton) {
       const leftTabsPosition = Math.round(tabs.getBoundingClientRect().left);
       const leftTabPosition = Math.round(tab.getBoundingClientRect().left);
       const diff = leftTabPosition - leftTabsPosition;
+
+      console.log(tabButton?.getBoundingClientRect())
 
       setWidth(Math.round(tab.getBoundingClientRect().width));
       setIndicatorPosition(diff);

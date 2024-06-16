@@ -1,117 +1,125 @@
 @import "../../scss/global";
 
 .list-view__container {
-    height: 220px;
-    background-color: antiquewhite;
-    background-position: center center;
-    border-radius: 16px;
-    background-size: cover;
-    position: relative;
+  height: 220px;
+  background-color: antiquewhite;
+  background-position: center center;
+  border-radius: 16px;
+  background-size: cover;
+  position: relative;
 
-    &::before {
-      display: block;
-      position: absolute;
-      content: "";
-      left: 0;
-      top: 0;
+  &::before {
+    display: block;
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.589), rgba(0, 0, 0, 0.452));
+    border-radius: 16px;
+  }
+
+  .play-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 16px;
+    cursor: pointer;
+
+    .play-content-button-info {
       width: 100%;
       height: 100%;
-      background: linear-gradient(rgba(0, 0, 0, 0.589), rgba(0, 0, 0, 0.452));
-      border-radius: 16px;
-    }
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: space-between;
 
-    .play-content {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      padding: 16px;
-      cursor: pointer;
-
-      .play-content-button-info {
-        width: 100%;
-        height: 100%;
+      .movie-video-info {
         display: flex;
-        align-items: center;
         flex-direction: column;
-        justify-content: space-between;
+        gap: 8px;
+      }
 
-        .movie-video-info {
-          display: flex;
-          flex-direction: column;
-          gap: 8px;
-        }
+      .video-title {
+        font-size: 12px;
+      }
 
-        .video-title {
-          font-size: 12px;
-        }
+      .play-button {
+        cursor: pointer;
+        transition: ease-in-out;
 
-        .play-button {
-          cursor: pointer;
-          transition: ease-in-out;
-
-          &:hover {
-            svg {
-              fill: rgb(182, 182, 182);
-            }
+        &:hover {
+          svg {
+            fill: rgb(182, 182, 182);
           }
         }
       }
     }
+  }
 }
 
 ///large
 
 .list-view-large__container {
-    @extend .list-view__container;
+  @extend .list-view__container;
 
-    &::before {
-      display: block;
-      position: absolute;
-      content: "";
-      left: 0;
-      top: 0;
+  &::before {
+    display: block;
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.589), rgba(0, 0, 0, 0.452));
+    border-radius: 16px;
+  }
+
+  .movie-popularity {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 16px;
+    cursor: pointer;
+
+    .movie-popularity-button-info {
       width: 100%;
       height: 100%;
-      background: linear-gradient(rgba(0, 0, 0, 0.589), rgba(0, 0, 0, 0.452));
-      border-radius: 16px;
-    }
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
 
-    .movie-popularity {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      padding: 16px;
-      cursor: pointer;
-
-      .movie-popularity-button-info {
-        width: 100%;
-        height: 100%;
+      .movie-video-info {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        gap: 8px;
 
-        .movie-video-info {
+        &-release-circle-bar {
           display: flex;
-          flex-direction: column;
-          gap: 8px;
+          align-items: end;
+          justify-content: space-between;
+          width: 100%;
+          align-items: center;
         }
+      }
 
-        .video-title {
-          font-size: 12px;
-        }
+      .video-title {
+        font-size: 12px;
+      }
 
-        .play-button {
-          cursor: pointer;
-          transition: ease-in-out;
+      .play-button {
+        cursor: pointer;
+        transition: ease-in-out;
 
-          &:hover {
-            svg {
-              fill: rgb(182, 182, 182);
-            }
+        &:hover {
+          svg {
+            fill: rgb(182, 182, 182);
           }
         }
       }
     }
+  }
 }

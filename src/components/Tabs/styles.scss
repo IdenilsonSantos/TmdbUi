@@ -11,6 +11,7 @@
   align-items: center;
   justify-content: space-between;
   list-style: none;
+  gap: 24px;
 }
 
 .tabs__content {
@@ -39,7 +40,7 @@
   color: #ffffff;
   font-weight: 500;
   border-radius: 12px;
-  color: #00b9fe;
+  color: $blue-color;
 }
 
 .slider {
@@ -55,6 +56,6 @@
   height: 100%;
   width: 100%;
   border-radius: 100px;
-  background-color: #00b9fe;
+  background-color: $blue-color;
   transition: all 0.3s ease;
 }

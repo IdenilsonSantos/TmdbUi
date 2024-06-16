@@ -2,11 +2,17 @@ import { FixedSizeList as List } from "react-window";
 import { CircularProgressBar } from "@tomik23/react-circular-progress-bar";
 import "./styles.scss";
 
+const changeDateFormatTo = (date) => {
+  const [yy, mm, dd] = date.split(/-/g);
+  return `${dd}/${mm}/${yy}`;
+};
+
 type Movie = {
   title: string;
   name: string;
   poster_path: string;
   popularity: number;
+  release_date: string
 };
 
 type Video = {
@@ -122,7 +128,6 @@ export const ListView = ({ data, handleClick, height, width, className }: ListVi
   const itemSize: number = width || 210;
   const heightSize: number = height || 250;
 
-  console.log("DT", data)
   return (
     <List
       height={heightSize}
@@ -184,9 +189,13 @@ export const ListViewLarge = ({ data, handleClick, height, width, className }: L
                     <span className="video-title">
                       {row.videos?.results?.length > 0 && row.videos?.results[0]?.name}
                     </span>
+                   
                   </div>
-                  <div className="movie-video-info-circle-bar">
-                    <div className="circle-bar">
+                  <div className="movie-video-info-release-circle-bar">
+                  <span className="video-title">
+                      {row.movie.release_date && <>Lançado em: {changeDateFormatTo(row.movie.release_date)}</>}
+                    </span>
+                    <div className="circle-bar" title={`Popularidade de ${props.percent}%`}>
                       <CircularProgressBar {...props} />
                     </div>
                   </div>

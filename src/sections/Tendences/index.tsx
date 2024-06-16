@@ -3,10 +3,11 @@ import { ListViewLarge } from "../../components/ListView";
 import "./styles.scss";
 import { loadDataParam } from "../../utils/hooks/getData";
 import { Tabs } from "../../components/Tabs";
+import Title from "../../components/Title";
 
 const options = [
-  { value: 1, label: "Hoje" },
-  { value: 2, label: "Esta Semana" },
+  { value: 4, label: "Hoje" },
+  { value: 5, label: "Esta Semana" },
 ];
 
 const Trending = () => {
@@ -14,54 +15,50 @@ const Trending = () => {
   const [trending, setTrending] = useState<[] | any>([]);
 
   const loadDataByDayOrWeek = async (_choiceTrending = "week") => {
-    const response = await loadDataParam(_choiceTrending)
+    const response = await loadDataParam(_choiceTrending);
     setTrending(response);
     return response;
-  }
+  };
 
   ///load inicial
   useEffect(() => {
-    loadDataByDayOrWeek("day")
+    loadDataByDayOrWeek("day");
   }, []);
 
   const handleTabValue = async (_value: any) => {
-
-    if(_value.value === 1) {
-      loadDataByDayOrWeek("day")
+    if (_value.value === 4) {
+      loadDataByDayOrWeek("day");
+    } else {
+      loadDataByDayOrWeek("week");
     }
-    else {
-      loadDataByDayOrWeek("week")
-    }
-    
-  }
+  };
 
   return (
-    <section className="trending">
-      <div className="tend">
+    <section className="trending__container">
+      <div className="trending__container-before-bg">
         <div className="container">
           <div className="trending-content">
-            <div className="title-tabs">
-              <h4>Tendências</h4>
-              <Tabs options={options} goTo={handleTabValue} />
-              <section className="Trending-poster">
-                <div className="featured-videos__container">
-                  <div className="container">
-                    <div className="featured-videos__content">
-                      <div className="featured-videos__content-Trending">
-                        {trending && trending.length > 0 && (
-                          <div className="play-area">
-                            <ListViewLarge
-                              data={trending}
-                              width={390}
-                              className="Trending-list-item"
-                            />
-                          </div>
-                        )}
-                      </div>
+            <Title title="Tendências">
+              <Tabs options={options} goTo={handleTabValue} defaulValue={{ value: 4, label: "Hoje" }} />
+            </Title>
+            <div className="trending-content__poster">
+              <div className="trending-content__poster-container">
+                <div className="container">
+                  <div className="trending-content__poster-content">
+                    <div className="content-list">
+                      {trending && trending.length > 0 && (
+                        <div className="play-area">
+                          <ListViewLarge
+                            data={trending}
+                            width={390}
+                            className="Trending-list-item"
+                          />
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
-              </section>
+              </div>
             </div>
           </div>
         </div>
