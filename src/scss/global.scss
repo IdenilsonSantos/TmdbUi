@@ -42,12 +42,21 @@ html {
 .container {
     height: 100%;
     margin: 0 auto;
+    padding: 0 16px;
 
-    @include md-breakpoint {
+    @include xs-breakpoint {
+        max-width: 40rem;
+    }
+
+    @include sm-breakpoint {
         max-width: 60rem;
     }
 
+    @include md-breakpoint {
+        max-width: 70rem;
+    }
+
     @include lg-breakpoint {
-        max-width: 80rem;
+        max-width: 110rem;
     }
 }

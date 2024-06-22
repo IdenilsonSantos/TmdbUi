@@ -40,12 +40,20 @@
       .info-movie-title {
         font-size: 48px;
         font-weight: 400;
+
+        @include xs-breakpoint {
+          font-size: 40px;
+        }
       }
 
       .info-movie-description {
         font-size: 16px;
         font-weight: 300;
         line-height: 2;
+
+        @include xs-breakpoint {
+          font-size: 8px;
+        }
       }
 
       .info-movies-actions {
@@ -69,6 +77,7 @@
           &:hover {
             transform: scale(1.25);
           }
+
         }
 
         .see-more-info {
@@ -96,10 +105,4 @@
       gap: 16px;
     }
   }
-}
-
-.play-area {
-  display: flex;
-  gap: 16px;
-  overflow: hidden;
 }

@@ -43,8 +43,7 @@ const Trending = () => {
             </Title>
             <div className="trending-content__poster">
               <div className="trending-content__poster-container">
-                <div className="container">
-                  <div className="trending-content__poster-content">
+              <div className="trending-content__poster-content">
                     <div className="content-list">
                       {trending && trending.length > 0 && (
                         <div className="play-area">
@@ -57,7 +56,6 @@ const Trending = () => {
                       )}
                     </div>
                   </div>
-                </div>
               </div>
             </div>
           </div>

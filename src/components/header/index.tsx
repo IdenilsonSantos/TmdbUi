@@ -1,20 +1,24 @@
-import {
-  BookmarkPlus,
-  ChevronDown,
-  Menu,
-  Search,
-  UserCircle,
-} from "lucide-react";
+import { useContext } from "react";
+import { BookmarkPlus, Menu, Search, UserCircle } from "lucide-react";
 import "./styles.scss";
+import { LayoutContext } from "../../utils/NavContext";
 
 const Header = () => {
+  const ctx = useContext(LayoutContext);
+
+  const { navOpen, setNavOpen, navDocked, navAnimate } = ctx;
+
+  const icon = navOpen ? "⬅️" : "➡️";
+
   return (
     <header className="header">
       <div className="container">
         <nav className="header__nav">
-          <div className="header__nav-logo-menu--left">
-            
-            <div className="menu--left-bar">
+          <div
+            className="header__nav-logo-menu--left"
+            onClick={() => setNavOpen(!navOpen)}
+          >
+            <div className="menu--left-bar" style={{ cursor: "pointer" }}>
               <Menu color="#C3C3C3" />
             </div>
             <img
@@ -24,10 +28,10 @@ const Header = () => {
           </div>
           <div className="header__nav-search">
             <div className="search-filter">
-              <input
+              {/* <input
                 className="search-filter__input"
                 placeholder="Search IMdb"
-              />
+              /> */}
               <div className="search-filter__drop-down">
                 <Search />
               </div>

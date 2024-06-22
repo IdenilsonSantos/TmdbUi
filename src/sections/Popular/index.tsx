@@ -47,8 +47,7 @@ const Popular = () => {
             </Title>
             <div className="popular-content__poster">
               <div className="popular-content__poster-container">
-                <div className="container">
-                  <div className="popular-content__poster-content">
+              <div className="popular-content__poster-content">
                     <div className="content-list">
                       {popular && popular.length > 0 && (
                         <div className="play-area">
@@ -61,7 +60,6 @@ const Popular = () => {
                       )}
                     </div>
                   </div>
-                </div>
               </div>
             </div>
           </div>

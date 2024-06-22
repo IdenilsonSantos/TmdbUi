@@ -7,6 +7,13 @@
   border-radius: 16px;
   background-size: cover;
   position: relative;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    .movie-video-info {
+      transform: scale(1.05);
+    }
+  }
 
   &::before {
     display: block;
@@ -37,7 +44,9 @@
       justify-content: space-between;
 
       .movie-video-info {
+        width: 100%;
         display: flex;
+        align-items: flex-start;
         flex-direction: column;
         gap: 8px;
       }
@@ -119,6 +128,28 @@
             fill: rgb(182, 182, 182);
           }
         }
+      }
+    }
+  }
+}
+
+.play-area {
+  display: flex;
+  gap: 16px;
+  overflow: hidden;
+
+  .fade {
+    > div {
+      &:after {
+        content: "";
+        width: 60px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0, #020000e7 100%);
+        will-change: opacity;
+        pointer-events: none;
       }
     }
   }

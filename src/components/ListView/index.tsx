@@ -135,6 +135,7 @@ export const ListView = ({ data, handleClick, height, width, className }: ListVi
       itemSize={itemSize}
       layout="horizontal"
       width={3000}
+      className="fade"
     >
       {({ index, style }) => (
         <Column
@@ -151,7 +152,7 @@ export const ListView = ({ data, handleClick, height, width, className }: ListVi
 
 export const ListViewLarge = ({ data, handleClick, height, width, className }: ListViewProps) => {
   const itemSize: number = width || 210;
-  const heightSize: number = height || 250;
+  const heightSize: number = height || 235;
 
   return (
     <List
@@ -160,6 +161,7 @@ export const ListViewLarge = ({ data, handleClick, height, width, className }: L
       itemSize={itemSize}
       layout="horizontal"
       width={3000}
+      className="fade"
     >
       {({ index, style }) => {
         const row = data[index];

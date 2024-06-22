@@ -16,12 +16,16 @@
     "react": "^18.2.0",
     "react-circular-progressbar": "^2.1.0",
     "react-dom": "^18.2.0",
+    "react-media": "^1.10.0",
+    "react-pro-sidebar": "^1.1.0",
+    "react-sidebar": "^3.0.2",
     "react-window": "^1.8.10"
   },
   "devDependencies": {
     "@types/node": "^20.14.2",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
+    "@types/react-sidebar": "^3.0.4",
     "@types/react-window": "^1.8.8",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",

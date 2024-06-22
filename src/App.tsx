@@ -3,15 +3,19 @@ import Trailers from "./sections/TrailerMovie";
 import Trending from "./sections/Tendences";
 import Popular from "./sections/Popular";
 import "./styles.scss";
+import NavWrapper from "./components/NavWrapper";
+import Root from "./utils/NavContext";
 
 function App() {
   return (
-    <>
-      <Header />
-      <Trailers/>
-      <Trending/>
-      <Popular/>
-    </>
+    <Root>
+      <NavWrapper>
+        <Header />
+        <Trailers />
+        <Trending />
+        <Popular />
+      </NavWrapper>
+    </Root>
   );
 }
 

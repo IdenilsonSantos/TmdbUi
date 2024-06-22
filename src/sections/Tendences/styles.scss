@@ -34,7 +34,7 @@
     width: 100%;
     position: absolute;
     background-image: linear-gradient(to bottom, #000000 0, $background-color 100%);
-    padding: 48px 16px
+    padding: 48px 0;
   }
 
   .trending-content {
@@ -54,9 +54,10 @@
       align-items: center;
       position: relative;
 
-      &__container {
+      &-container {
         position: absolute;
         width: 100%;
+        overflow: hidden;
       }
 
       &__content {
