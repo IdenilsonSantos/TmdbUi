@@ -1,0 +1,95 @@
+@import "../../scss/global.scss";
+
+div.media,
+footer,
+footer section {
+    display: flex;
+    justify-content: center
+}
+
+footer {
+    max-width: 100%;
+    width: 100vw;
+    box-sizing: border-box;
+    padding: 0;
+    background: #FFF;
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: space-between;
+
+    section {
+        width: 100%;
+        color: $background-color;
+        opacity: .1;
+        font-size: .7em
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 80px;
+        padding-bottom: 80px;
+        color: $background-color
+    }
+
+    a {
+        color: $background-color;
+
+        .rounded,
+        footer nav h3 {
+            font-weight: 700;
+            text-transform: uppercase
+        }
+    }
+
+    div {
+        margin-right: 40px;
+        min-width: 0;
+        box-sizing: border-box
+    }
+
+    .join {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        .rounded {
+            padding: 12px 16px;
+            background: #01b4e4;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #FFF;
+
+            &:hover {
+                color: #01b4e4;
+                background: $background-color;
+            }
+        }
+    }
+
+    h3 {
+        font-size: 1.4em;
+        line-height: 1.4em;
+        color: $background-color;
+        white-space: nowrap
+    }
+
+    ul li {
+        line-height: 1.6em;
+        max-width: 260px;
+        color: $background-color;
+        list-style: none;
+
+        a {
+            span {
+                .glyphicons {
+                    top: 0;
+                    font-size: .6em
+                }
+            }
+        }
+    }
+}

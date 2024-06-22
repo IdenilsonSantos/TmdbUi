@@ -1,10 +1,11 @@
-import Header from "./components/header";
+import Header from "./components/Header";
 import Trailers from "./sections/TrailerMovie";
 import Trending from "./sections/Tendences";
 import Popular from "./sections/Popular";
-import "./styles.scss";
 import NavWrapper from "./components/NavWrapper";
 import Root from "./utils/NavContext";
+import "./styles.scss";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Trailers />
         <Trending />
         <Popular />
+        <Footer/>
       </NavWrapper>
     </Root>
   );

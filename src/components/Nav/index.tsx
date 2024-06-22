@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { LayoutContext } from "../../utils/NavContext";
-import TmdbLogoLarge from "../../assets/tmdb-logo-large.svg"
 import "./styles.scss";
 
 const Nav: React.FC = () => {
@@ -14,7 +13,7 @@ const Nav: React.FC = () => {
       style={{ width: navWidth, height: "100%" }}
     >
       <div className="sidebar-logo">
-        <img src={TmdbLogoLarge} />
+        <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg" />
       </div>
       <div className="sidebar-list">
       <ul>

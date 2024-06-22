@@ -1,14 +1,12 @@
 import { useContext } from "react";
 import { BookmarkPlus, Menu, Search, UserCircle } from "lucide-react";
-import "./styles.scss";
 import { LayoutContext } from "../../utils/NavContext";
+import "./styles.scss";
 
 const Header = () => {
   const ctx = useContext(LayoutContext);
 
-  const { navOpen, setNavOpen, navDocked, navAnimate } = ctx;
-
-  const icon = navOpen ? "⬅️" : "➡️";
+  const { navOpen, setNavOpen } = ctx;
 
   return (
     <header className="header">

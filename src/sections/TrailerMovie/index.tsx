@@ -60,6 +60,12 @@ const Trailers = () => {
     }
   };
 
+  const seeMoreInfo = (key: string | undefined) => {
+    if (key) {
+      window.open(`https://www.themoviedb.org/movie/${key}`, "_blank");
+    }
+  };
+
   return (
     <section
       className="featured-videos"
@@ -85,13 +91,23 @@ const Trailers = () => {
                   </div>
                 )}
 
-                <button className="see-more-info">Ver mais informações</button>
+                <button
+                  className="see-more-info"
+                  title={`Ver mais informações de ${movie.title || movie.name}`}
+                  onClick={() => seeMoreInfo(movie.id)}
+                >
+                  Ver mais informações
+                </button>
               </div>
             </div>
 
             <div className="featured-videos__content-trailers">
               <Title title="Últimos Lançamentos">
-                <Tabs options={options} goTo={handleTabValue} defaulValue={{ value: 1, label: "Cinema" }} />
+                <Tabs
+                  options={options}
+                  goTo={handleTabValue}
+                  defaulValue={{ value: 1, label: "Cinema" }}
+                />
               </Title>
               {featured && featured.length > 0 && (
                 <div className="play-area">
