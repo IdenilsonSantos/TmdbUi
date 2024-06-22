@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
+
 import Media from "react-media";
 
 const BootrapBreakpoints = {
   xs: 576,
   sm: 768,
   md: 992,
-  lg: 1200,
+  lg: 1200
 };
 
 interface LayoutState {
@@ -14,58 +15,58 @@ interface LayoutState {
   navOpen: boolean;
   navDocked: boolean;
   navWidth: number;
+
   setNavOpen: (open: boolean) => void;
   setNavDocked: (docked: boolean) => void;
 }
-
 export const LayoutContext = React.createContext<LayoutState>({
   navAnimate: false,
   navBreakpoint: "sm",
   navOpen: false,
-  navDocked: true,
+  navDocked: false,
   navWidth: 256,
   setNavOpen: () => {},
-  setNavDocked: () => {},
+  setNavDocked: () => {}
 });
 
-const Root = ({ children }) => {
+interface RootProps {}
+
+const Root: React.FC<RootProps> = ({ children }) => {
+  const navBreakpoint = "sm";
+
+  const startingWidth = 0;
+  const navStartsOpen = startingWidth > BootrapBreakpoints[navBreakpoint];
+
   const [navAnimate, setNavAnimate] = useState(false);
-  const [navOpen, setNavOpen] = useState(false);
-  const [navDocked, setNavDocked] = useState(true);
+  const [navOpen, setNavOpen] = useState(navStartsOpen);
+  const [navDocked, setNavDocked] = useState(false);
 
+  // Allow the sidebar to render without animated. By defualt, it
+  // animates when it initially loads, making the page jump around with
+  // every page load. This enables it to appear fully in instantly, but
+  // then enables animations for menu interactions after the initial
+  // load.
   useEffect(() => {
-    const startingWidth = window.innerWidth;
-    const navStartsOpen = startingWidth > BootrapBreakpoints.sm;
-
-    setNavOpen(navStartsOpen);
-
-    // Timeout to enable animation after initial load
     const timer = setTimeout(() => {
       setNavAnimate(true);
     }, 100);
-
     return () => clearTimeout(timer);
   }, []);
 
+  // Genereate desired Layout state here.
   const layout: LayoutState = {
-    navAnimate,
+    navAnimate: navAnimate,
     navBreakpoint: "sm",
     navOpen,
     navDocked,
     navWidth: 256,
     setNavOpen,
-    setNavDocked,
+    setNavDocked
   };
 
   return (
     <LayoutContext.Provider value={layout}>
-      <Media
-        query={{ minWidth: BootrapBreakpoints.sm }}
-        onChange={(isLarge: boolean) => {
-          setNavDocked(isLarge);
-          setNavOpen(isLarge);
-        }}
-      />
+      <Media query={{ minWidth: BootrapBreakpoints.sm }}/>
       <div>{children}</div>
     </LayoutContext.Provider>
   );
