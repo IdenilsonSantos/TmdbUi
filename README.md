@@ -4,13 +4,6 @@
 
 ![](https://res.cloudinary.com/djgvgwuwe/image/upload/v1719767791/portfolio/g9zi9jmmj4s3wwjjqbsj.png)
 
-<p align="center" display="flex">
-Feito com
-  ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white) 
-  ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-  ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
-</p>
-
 ## Índice
 
 - [Sobre](#sobre)
