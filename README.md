@@ -1,30 +1,75 @@
-# React + TypeScript + Vite
+<h4 align="center">
+    <b>Interface Tmdb</b> 
+</h4>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![](https://res.cloudinary.com/djgvgwuwe/image/upload/v1719767791/portfolio/g9zi9jmmj4s3wwjjqbsj.png)
 
-Currently, two official plugins are available:
+<p align="center" display="flex">
+Feito com
+  ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white) 
+  ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+  ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Índice
 
-## Expanding the ESLint configuration
+- [Sobre](#sobre)
+- [Tecnologias](#tecnologias)
+- [Como Instalar](#instalar)
+- [Contribuições](#contribuir)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+<a id="sobre"></a>
 
-- Configure the top-level `parserOptions` property like this:
+## Sobre
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+Interface de autoria própria para teste de conhecimentos e integração com a api do Tmdb, um serviço opensource que obtem informações sobre filmes, séries e programas de tv.
+
+<a id="tecnologias"></a>
+
+## Tecnologias Utilizadas
+
+O projeto foi desenvolvido utilizando as seguintes tecnologias.
+
+- [TypeScript](https://www.typescriptlang.org/)
+- [ReactJS](https://reactjs.org/)
+- [Sass](https://sass-lang.com/)
+- [Vite](https://vitejs.dev/)
+
+<a id="instalar"></a>
+
+## Como Instalar
+
+- ### **Pré-requisitos**
+
+  - Primeiro você **precisa** ter o **[Node.js](https://nodejs.org/en/)** instalado em sua  máquina.
+  - Também é **preciso** ter um gerenciador de pacotes: **[NPM](https://www.npmjs.com/)** ou **[Yarn](https://yarnpkg.com/)**.
+
+1. Faça o clone do projeto :
+
+```sh
+  $ git clone https://github.com/IdenilsonSantos/TmdbUi.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. Executando a Aplicação:
+
+```sh
+  # Instale as dependências
+  $ npm install ou yarn install
+
+  # Inicie a aplicação web
+  $ cd TmdbUi
+  $ npm run dev ou yarn dev
+```
+
+<a id="contribuir"></a>
+
+## Como contribuir
+
+- Faça um Fork desse repositório,
+- Crie uma branch com a sua feature: `git checkout -b my-feature`
+- Commit suas mudanças: `git commit -m 'feat: My new feature'`
+- Push a sua branch: `git push origin my-feature`
+
+## License
+
+![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)
